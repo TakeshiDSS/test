@@ -1,16 +1,4 @@
-var FindProxyForURL = function(init, profiles) {
-    return function(url, host) {
-        "use strict";
-        var result = init, scheme = url.substr(0, url.indexOf(":"));
-        do {
-            result = profiles[result];
-            if (typeof result === "function") result = result(url, host, scheme);
-        } while (typeof result !== "string" || result.charCodeAt(0) === 43);
-        return result;
-    };
-}("+\u0410\u043d\u0442\u0438\u0437\u0430\u043f\u0440\u0435\u0442 PAC", {
-    "+\u0410\u043d\u0442\u0438\u0437\u0430\u043f\u0440\u0435\u0442 PAC": function() {
-        ;
+
 // ProstoVPN.AntiZapret PAC-host File
 // Generated on Fri 03 Feb 2023 09:29:30 PM MSK, by https://bitbucket.org/anticensority/antizapret-pac-generator-light/
 // THIS FILE IS NEITHER OBFUSCATED NOR ENCRYPTED, IT'S COMPRESSED TO COMPLY WITH BROWSER PAC FILE SIZE LIMITS.
